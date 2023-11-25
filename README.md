@@ -4,11 +4,12 @@
 # Rapport Tp2 IOT
 ## Final Result
 <div style="text-align:center;">
-  <img src="img/img1.jpg" alt="Untitled" width="70%">
+  <img src="img/img1.jpg" alt="Untitled" width="30%">
+  <img src="img/img2.jpg" alt="Untitled" width="30%">
 </div>
-<div style="text-align:center;">
-  <img src="img/img2.jpg" alt="Untitled" width="70%">
-</div>
+
+# introduction
+>The provided code implements a basic Internet of Things (IoT) project where an ESP8266 acts as a CoAP server, controlling an LED and providing a temperature reading. Concurrently, a Flask web application serves as a CoAP client, enabling users to interact with the IoT system through a web interface. The ESP8266 responds to CoAP requests to toggle the LED state and retrieve the current temperature, while the Flask application facilitates user control and displays the LED's status on a web page. This collaborative setup illustrates a straightforward example of bidirectional communication in an IoT environment
 
 # Python Code 
 
@@ -95,7 +96,7 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   server.SetPacketProvider(udpProvider);
-
+ 
   server.CreateResource("LED", Thing::CoAP::ContentFormat::TextPlain, true)
     .OnGet([](Thing::CoAP::Request & request) {
       Serial.println("GET Request received for endpoint 'LED'");

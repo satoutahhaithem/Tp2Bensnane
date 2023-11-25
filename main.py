@@ -25,7 +25,7 @@ def index():
 
     return render_template('index.html', state='OFF')
 
-@app.route('/led_on', methods=['POST'])
+@app.route('/led_off', methods=['POST'])
 def led_on():
     client = HelperClient(server=(COAP_SERVER_IP, 5683))
     response = client.post('/LED', 'On')
@@ -33,7 +33,7 @@ def led_on():
     client.stop()
     return render_template('index.html', state='ON')
 
-@app.route('/led_off', methods=['POST'])
+@app.route('/led_on', methods=['POST'])
 def led_off():
     client = HelperClient(server=(COAP_SERVER_IP, 5683))
     response = client.post('/LED', 'Off')

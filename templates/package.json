@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "coap-packet": "^1.1.1"
+  }
+}

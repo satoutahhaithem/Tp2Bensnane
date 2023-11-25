@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CoAP LED Control</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <style>
+    .inline-form {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" style="text-align:center;">
+
+    <p style='font-size:30px;'>
+      Led State :
+      <span id='state'>{{ state }}</span>
+    </p>
+
+    <form class="inline-form" action="/led_on" method="post">
+      <button class="btn btn-success" type="submit">ON</button>
+    </form>
+
+    <form class="inline-form" action="/led_off" method="post">
+      <button class="btn btn-danger" type="submit">OFF</button>
+    </form>
+
+  </div>
+</body>
+
+</html>
